@@ -54,13 +54,13 @@ button {
     align-items: flex-end;
     width: 100%;
     font-family: Arial;
-    font-weight: bolder;
+    font-weight: lighter;
     color: white;
     font-size: 1.8rem;
 }
 
 .tmp-result {
-    display: none;
+    display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     width: 100%;
@@ -111,6 +111,13 @@ button {
 .btn-0 {
     grid-row-start: 5;
     grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.btn-ac {
+    grid-row-start: 1;
+    grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 3;
 }
