@@ -6,3 +6,176 @@ html, body {
 p {
     margin: 0;
 }
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 12.5rem;
+    height: 21.875rem;
+    background: rgba(10, 10, 10, .8);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+}
+
+.operations {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    font-family: Arial;
+    font-weight: bolder;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.tmp-result {
+    display: none;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    font-family: Arial;
+    font-weight: bolder;
+    color: #6d6d6d;
+    font-size: 1rem;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: 3.125rem 3.125rem 3.125rem 3.125rem;
+    grid-template-rows: 3.125rem 3.125rem 3.125rem 3.125rem 3.125rem;
+}
+
+.btn {
+    border: 1px solid rgba(10, 10, 10, .8);
+    border-radius: 4px;
+    color: white;
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: rgba(79, 79, 79, .8);
+    transition: all ease-in-out .3s;
+}
+
+.btn:hover {
+    color: rgba(244, 162, 60, 1);
+    transform: scale(1.2);
+    border: 2px solid rgba(10, 10, 10, .8);
+    background-color: rgba(79, 79, 79, 1);
+}
+
+.special {
+    background-color: rgba(47, 47, 47, .8);
+}
+
+.action {
+    background-color: rgba(244, 162, 60, 1);
+    transition: all ease-in-out .3s;
+}
+
+.btn.action:hover {
+    color: rgba(47, 47, 47, .8);
+    background-color: rgba(244, 162, 60, 1);
+}
+
+.btn-0 {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/* BACKGROUND BLOB */
+
+.blob{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 0;
+    background-image: linear-gradient(120deg, #34e0f0 0%, #b400ff 100%);
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    width: 30rem; height: 27rem;
+    animation: morph 3s linear infinite;
+    transform-style: preserve-3d;
+    outline: 1px solid transparent;
+    will-change: border-radius;
+}
+.blob:before,
+.blob:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0; top: 0;
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    box-shadow: 5px 5px 89px rgba(191, 0, 255, 0.21);
+    will-change: border-radius, transform, opacity;
+    animation-delay: 200ms;
+    background-image: linear-gradient(120deg, rgba(115, 0, 255, 0.55) 0%, rgba(200, 0, 255, 0.89) 100%);
+}
+
+.blob:before{
+    animation: morph 3s linear infinite;
+    opacity: .21;
+    animation-duration: 1.5s;
+}
+
+@keyframes morph{
+    0%,100%{
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate3d(0,0,0) rotateZ(0.01deg);
+    }
+    34%{
+        border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+        transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+    }
+    50%{
+        opacity: .89;
+        transform: translate3d(0,0,0) rotateZ(0.01deg);
+    }
+    67%{
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+        transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+    }
+}
+
+@keyframes fadeIn{
+    100%{
+        transform: scale(1.03);
+        opacity: 0;
+    }
+}
