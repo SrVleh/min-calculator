@@ -46,6 +46,8 @@ button {
     height: 100px;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 8px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .operations {
@@ -84,12 +86,12 @@ button {
     font-size: 1rem;
     font-weight: bolder;
     background-color: rgba(79, 79, 79, .8);
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .25s;
 }
 
 .btn:hover {
     color: rgba(244, 162, 60, 1);
-    transform: scale(1.2);
+    transform: scale(1.1);
     border: 2px solid rgba(10, 10, 10, .8);
     background-color: rgba(79, 79, 79, 1);
 }
